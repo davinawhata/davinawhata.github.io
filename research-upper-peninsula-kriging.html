@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="color-scheme" content="light">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Mapping elevation with kriging – Davina Whata</title>
+  <meta name="description" content="Elevation sample points were interpolated with ordinary kriging, using a log transformation, anisotropy and a four-sector search neighborhood. The pre">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <nav class="site-nav" aria-label="Main">
+    <div class="wrap">
+      
+      <a class="brand" href="index.html" title="Back to home">Davina Whata<span class="brand-role">GIS and remote sensing</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-menu">
+          <button type="button" class="menu-parent" aria-expanded="false">About me <span aria-hidden="true">▾</span></button>
+          <ul class="submenu">
+            <li><a href="about.html">Quick bio</a></li>
+            <li><a href="cv.html">CV</a></li>
+          </ul>
+        </li>
+        <li class="has-menu is-current">
+          <button type="button" class="menu-parent" aria-expanded="false">Research <span aria-hidden="true">▾</span></button>
+          <ul class="submenu submenu-right">
+            <li><a href="research.html">All projects</a></li>
+            <li><a href="research-sentinel-image-processing.html">Satellite and underwater imagery</a></li>
+            <li><a href="research-lake-michigan-buoys.html">Lake Michigan buoys</a></li>
+            <li><a href="research-fort-worth-fire-stations.html">Fire station planning</a></li>
+            <li><a href="research-california-shark-attacks.html">Shark attack patterns</a></li>
+            <li><a href="research-upper-peninsula-kriging.html" aria-current="page">Elevation kriging</a></li>
+            <li><a href="research-washington-snow-depth.html">Snow depth modeling</a></li>
+            <li><a href="research-ecuador-jaguarundi-habitat.html">Jaguarundi habitat</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main" class="page">
+    <article class="wrap project-page">
+      <a class="back-link" href="research.html">← All research</a>
+      <h1 class="page-title">Mapping elevation with kriging</h1>
+      <p class="project-meta">Michigan’s Upper Peninsula, March 2026</p>
+      <figure class="project-figure">
+        <a href="images/research-upper-peninsula-kriging.jpg" target="_blank" rel="noopener"><img src="images/research-upper-peninsula-kriging.jpg" alt="Two maps of Michigan’s Upper Peninsula: kriging standard error above and predicted elevation below"></a>
+        <figcaption class="zoom-hint">Tap or click the map to open it full size.</figcaption>
+      </figure>
+      <p class="project-desc">Elevation sample points were interpolated with ordinary kriging, using a log transformation, anisotropy and a four-sector search neighborhood. The prediction surface is paired with a standard error map, which shows where the model is confident (densely sampled areas) and where it is not (the edges and the sparsely sampled southeast).</p>
+      <ul class="tags"><li>Ordinary kriging</li><li>Semivariogram modeling</li><li>Cross-validation</li><li>ArcGIS Pro</li></ul>
+      <div class="project-actions">
+        <div class="download-row">
+          <a class="button solid" href="docs/upper-peninsula-kriging.pdf" download>Download the full document (PDF, 0.4 MB)</a>
+        </div>
+        <a class="next-link" href="research-washington-snow-depth.html">Next project: Snow depth modeling →</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <ul class="socials">
+        <li><a href="mailto:dtwhata@mtu.edu" title="Email me">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+          <span class="sr-only">Email me</span></a></li>
+        <li><a href="https://www.linkedin.com/in/davina-whata/" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.4V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.5-2.25 3.1V21H9z"/></svg>
+          <span class="sr-only">LinkedIn</span></a></li>
+      </ul>
+      <p class="fineprint">Davina Whata &nbsp;•&nbsp; <span id="year">2026</span> &nbsp;•&nbsp; <a href="index.html">davinawhata.github.io</a></p>
+      <p class="credits">Images: Baritú National Park, NASA Earth Observatory.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    (function () {
+      var toggle = document.querySelector('.nav-toggle');
+      var links = document.getElementById('nav-links');
+      toggle.addEventListener('click', function () {
+        var open = links.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+      });
+      links.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') {
+          links.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+
+    // "About me" dropdown
+    (function () {
+      document.querySelectorAll('.menu-parent').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var open = btn.parentElement.classList.toggle('open');
+          btn.setAttribute('aria-expanded', open);
+        });
+      });
+      document.addEventListener('click', function (e) {
+        document.querySelectorAll('.has-menu.open').forEach(function (m) {
+          if (!m.contains(e.target)) {
+            m.classList.remove('open');
+            m.querySelector('.menu-parent').setAttribute('aria-expanded', 'false');
+          }
+        });
+      });
+    })();
+
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
